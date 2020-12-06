@@ -28,7 +28,6 @@ public class StatsRepository {
 
         String sql = "INSERT INTO stats (table_name, number_of_rows) VALUES(?, ?) ON DUPLICATE KEY UPDATE    \n" +
                 "number_of_rows=?";
-        connection.setAutoCommit(false);
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, tableName);
         statement.setInt(2, numberOfRows);
