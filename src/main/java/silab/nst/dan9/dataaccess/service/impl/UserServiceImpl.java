@@ -78,6 +78,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public User update(User user) {
         try {
+            connection.setAutoCommit(true);
             userRepository.update(user);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
